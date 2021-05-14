@@ -2,12 +2,15 @@ service: serverless
 
 provider:
   name: aws
-  runtime: nodejs8.10
-  profile: femasters
+  runtime: nodejs14.x
+  #profile: femasters
   region: us-west-1
   stage: dev
+  lambdaHashingVersion: 20201221
 
 plugins:
   - serverless-offline
 
-    
+functions:
+  helloWorld:
+    handler: src/helloworld.handler
